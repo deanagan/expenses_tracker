@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(nutri_focus LANGUAGES CXX)
+project(expenses_tracker LANGUAGES CXX)
 
-set(BINARY_NAME "nutri_focus")
+set(BINARY_NAME "expenses_tracker")
 
 cmake_policy(SET CMP0063 NEW)
 

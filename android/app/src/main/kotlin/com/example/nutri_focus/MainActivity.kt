@@ -1,4 +1,4 @@
-package com.example.nutri_focus
+package com.example.expenses_tracker
 
 import io.flutter.embedding.android.FlutterActivity
 
