@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:expenses_tracker/shared/menu_drawer.dart';
+import 'package:expenses_tracker/shared/bottom_navigation.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class IntroScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: const Text('Expenses Tracker')),
         drawer: const MenuDrawer(),
+        bottomNavigationBar: const BottomMenu(),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
