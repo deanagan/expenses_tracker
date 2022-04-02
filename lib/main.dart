@@ -1,5 +1,7 @@
-import 'package:expenses_tracker/screens/intro_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:expenses_tracker/screens/intro_screen.dart';
+import 'package:expenses_tracker/screens/summary.dart';
+import 'package:expenses_tracker/screens/add_expense.dart';
 
 void main() {
   runApp(const ExpensesTrackerApp());
@@ -12,7 +14,12 @@ class ExpensesTrackerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: const IntroScreen(),
+      routes: {
+        '/': (context) => const IntroScreen(),
+        '/summary': (context) => const Summary(),
+        '/add': (context) => const AddExpense()
+      },
+      //home: const IntroScreen(),
     );
   }
 }

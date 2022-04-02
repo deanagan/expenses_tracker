@@ -9,7 +9,7 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text('Expenses Tracker')),
-        drawer: const MenuDrawer(),
+        //drawer: const MenuDrawer(),
         bottomNavigationBar: const BottomMenu(),
         body: Container(
           decoration: const BoxDecoration(
