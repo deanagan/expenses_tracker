@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:expenses_tracker/shared/bottom_navigation.dart';
 
 class AddExpense extends StatelessWidget {
   const AddExpense({Key? key}) : super(key: key);
@@ -7,6 +8,7 @@ class AddExpense extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text('Add Expense')),
+        bottomNavigationBar: const BottomMenu(),
         body: const Center(
           child: FlutterLogo(),
         ));
