@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:expenses_tracker/shared/menu_drawer.dart';
+// import 'package:expenses_tracker/shared/menu_drawer.dart';
 import 'package:expenses_tracker/shared/bottom_navigation.dart';
 
 class IntroScreen extends StatelessWidget {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:expenses_tracker/constants/routes.dart';
 
 class BottomMenu extends StatelessWidget {
   const BottomMenu({Key? key}) : super(key: key);
@@ -8,16 +9,10 @@ class BottomMenu extends StatelessWidget {
     return BottomNavigationBar(
       items: getBottomMenuItems(),
       onTap: (int index) {
-        switch (index) {
-          case 0:
-            Navigator.pushNamed(context, '/');
-            break;
-          case 1:
-            Navigator.pushNamed(context, '/summary');
-            break;
-          case 2:
-            Navigator.pushNamed(context, '/add');
-            break;
+        var currentRouteSettings = ModalRoute.of(context)?.settings;
+        var newPage = Routes.routeMap[index] ?? Routes.home;
+        if (currentRouteSettings?.name != newPage) {
+          Navigator.popAndPushNamed(context, newPage);
         }
       },
     );
