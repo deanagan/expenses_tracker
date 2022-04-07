@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:expenses_tracker/shared/bottom_navigation.dart';
+import 'package:sprouts_tracker/shared/bottom_navigation.dart';
 
 class AddExpense extends StatelessWidget {
   const AddExpense({Key? key}) : super(key: key);

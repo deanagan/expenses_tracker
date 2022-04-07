@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:expenses_tracker/screens/intro_screen.dart';
-import 'package:expenses_tracker/screens/summary.dart';
-import 'package:expenses_tracker/screens/add_expense.dart';
+import 'package:sprouts_tracker/screens/intro_screen.dart';
+import 'package:sprouts_tracker/screens/summary.dart';
+import 'package:sprouts_tracker/screens/add_expense.dart';
 
 void main() {
-  runApp(const ExpensesTrackerApp());
+  runApp(const SproutsTrackerApp());
 }
 
-class ExpensesTrackerApp extends StatelessWidget {
-  const ExpensesTrackerApp({Key? key}) : super(key: key);
+class SproutsTrackerApp extends StatelessWidget {
+  const SproutsTrackerApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

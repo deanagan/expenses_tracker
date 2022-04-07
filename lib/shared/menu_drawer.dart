@@ -12,11 +12,11 @@ class MenuDrawer extends StatelessWidget {
   }
 
   List<Widget> buildMenuItems(BuildContext context) {
-    final List<String> menuTitles = ['Home', 'Expenses', 'Add/Edit Expense'];
+    final List<String> menuTitles = ['Home', 'History', 'Add/Edit'];
     List<Widget> menuItems = [];
     menuItems.add(const DrawerHeader(
         decoration: BoxDecoration(color: Colors.blueGrey),
-        child: Text('Expense Tracker',
+        child: Text('Sprouts Tracker',
             style: TextStyle(color: Colors.white, fontSize: 28))));
 
     for (var element in menuTitles) {

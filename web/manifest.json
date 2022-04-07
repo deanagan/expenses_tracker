@@ -1,6 +1,6 @@
 {
-    "name": "expenses_tracker",
-    "short_name": "expenses_tracker",
+    "name": "sprouts_tracker",
+    "short_name": "sprouts_tracker",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

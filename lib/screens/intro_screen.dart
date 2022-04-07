@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:expenses_tracker/shared/menu_drawer.dart';
-import 'package:expenses_tracker/shared/bottom_navigation.dart';
+// import 'package:sprouts_tracker/shared/menu_drawer.dart';
+import 'package:sprouts_tracker/shared/bottom_navigation.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Expenses Tracker')),
+        appBar: AppBar(title: const Text('Sprouts Tracker')),
         //drawer: const MenuDrawer(),
         bottomNavigationBar: const BottomMenu(),
         body: Container(
@@ -23,8 +23,7 @@ class IntroScreen extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     color: Colors.white70,
                   ),
-                  child: const Text(
-                      'Track your expenses and make it \neasy come tax time!',
+                  child: const Text('Track your sprouts and harvest on time!',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 20, shadows: [
                         Shadow(

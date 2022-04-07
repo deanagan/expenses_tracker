@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:expenses_tracker/constants/routes.dart';
+import 'package:sprouts_tracker/constants/routes.dart';
 
 class BottomMenu extends StatelessWidget {
   const BottomMenu({Key? key}) : super(key: key);

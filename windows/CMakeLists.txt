@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(expenses_tracker LANGUAGES CXX)
+project(sprouts_tracker LANGUAGES CXX)
 
-set(BINARY_NAME "expenses_tracker")
+set(BINARY_NAME "sprouts_tracker")
 
 cmake_policy(SET CMP0063 NEW)
 
