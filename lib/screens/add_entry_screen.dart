@@ -9,13 +9,20 @@ class AddEntryScreen extends StatefulWidget {
 }
 
 class _AddEntryScreenState extends State<AddEntryScreen> {
+  final TextEditingController txtAmount = TextEditingController();
+  final TextEditingController txtKind = TextEditingController();
+  final TextEditingController txtDateStart = TextEditingController();
   final double fontSize = 18;
   String result = '';
   bool isTablespoons = true;
   bool isGrams = false;
   double? amount;
   int? targetDays;
+  String kind = '';
   late List<bool> isSelected;
+  String amountMessage = '';
+  String dateMessage = '';
+  String kindMessage = '';
 
   @override
   void initState() {
@@ -25,27 +32,62 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    amountMessage =
+        'Please enter amount of seeds in ${isTablespoons ? 'tablespoons' : 'grams'}';
+    kindMessage = 'Enter kind of seeds (e.g. Broccoli, Radish)';
+    dateMessage = 'Enter date started';
+
     return Scaffold(
         appBar: AppBar(title: const Text('Add Sprout Entry')),
         bottomNavigationBar: const BottomMenu(),
-        body: Column(
-          children: [
-            ToggleButtons(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child:
-                      Text('Tablespoons', style: TextStyle(fontSize: fontSize)),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: ToggleButtons(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Text('Tablespoons',
+                          style: TextStyle(fontSize: fontSize)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child:
+                          Text('Grams', style: TextStyle(fontSize: fontSize)),
+                    ),
+                  ],
+                  isSelected: isSelected,
+                  onPressed: toggleMeasurement,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Text('Grams', style: TextStyle(fontSize: fontSize)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: TextField(
+                  controller: txtAmount,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(hintText: amountMessage),
                 ),
-              ],
-              isSelected: isSelected,
-              onPressed: toggleMeasurement,
-            ),
-          ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: TextField(
+                  controller: txtKind,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(hintText: kindMessage),
+                ),
+              ),
+              TextField(
+                controller: txtDateStart,
+                onTap: showDatePicker,
+                decoration: InputDecoration(hintText: amountMessage),
+              ),
+              ElevatedButton(
+                  onPressed: submitEntry,
+                  child: Text('Add/Edit', style: TextStyle(fontSize: fontSize)))
+            ],
+          ),
         ));
   }
 
@@ -60,5 +102,13 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
     setState(() {
       isSelected = [isTablespoons, isGrams];
     });
+  }
+
+  void submitEntry() {
+    // Submit entry to backend
+  }
+
+  void showDatePicker() {
+    // Implement date picker
   }
 }
