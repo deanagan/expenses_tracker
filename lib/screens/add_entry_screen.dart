@@ -63,7 +63,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(32.0),
                 child: TextField(
                   controller: txtAmount,
                   keyboardType: TextInputType.number,
@@ -78,10 +78,13 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
                   decoration: InputDecoration(hintText: kindMessage),
                 ),
               ),
-              TextField(
-                controller: txtDateStart,
-                onTap: showDatePicker,
-                decoration: InputDecoration(hintText: amountMessage),
+              Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: TextField(
+                  controller: txtDateStart,
+                  onTap: showDatePicker,
+                  decoration: InputDecoration(hintText: dateMessage),
+                ),
               ),
               ElevatedButton(
                   onPressed: submitEntry,
