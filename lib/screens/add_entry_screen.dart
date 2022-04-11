@@ -81,8 +81,9 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
               Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: TextField(
+                  readOnly: true,
                   controller: txtDateStart,
-                  onTap: showDatePicker,
+                  onTap: () => onSelectDate(context),
                   decoration: InputDecoration(hintText: dateMessage),
                 ),
               ),
@@ -111,7 +112,18 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
     // Submit entry to backend
   }
 
-  void showDatePicker() {
-    // Implement date picker
+  void onSelectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
+
+    if (picked != null) {
+      final dateStart = picked.toLocal().toString().split(' ')[0];
+      setState(() {
+        txtDateStart.text = dateStart;
+      });
+    }
   }
 }
