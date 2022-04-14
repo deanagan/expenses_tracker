@@ -45,22 +45,7 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: ToggleButtons(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Text('Tablespoons',
-                          style: TextStyle(fontSize: fontSize)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child:
-                          Text('Grams', style: TextStyle(fontSize: fontSize)),
-                    ),
-                  ],
-                  isSelected: isSelected,
-                  onPressed: toggleMeasurement,
-                ),
+                child: getMeasurementToggleButtons(),
               ),
               Padding(
                 padding: const EdgeInsets.all(32.0),
@@ -93,6 +78,24 @@ class _AddEntryScreenState extends State<AddEntryScreen> {
             ],
           ),
         ));
+  }
+
+  ToggleButtons getMeasurementToggleButtons() {
+    return ToggleButtons(
+      children: getPaddedButtonText,
+      isSelected: isSelected,
+      onPressed: toggleMeasurement,
+    );
+  }
+
+  List<Widget> get getPaddedButtonText {
+    const measurementText = ['Tablespoons', 'Grams'];
+
+    return measurementText
+        .map((text) => Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(text, style: TextStyle(fontSize: fontSize))))
+        .toList();
   }
 
   void toggleMeasurement(value) {
