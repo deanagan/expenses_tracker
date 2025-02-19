@@ -1,3 +1,3 @@
-# sprouts_tracker
+# My Seed Collection
 
-This is a mobile app to track sprouts so I can remember when they are due for harvest.
+Flutter Mobile App to track available seeds in my inventory
